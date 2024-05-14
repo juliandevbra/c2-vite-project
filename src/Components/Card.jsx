@@ -1,20 +1,19 @@
-import CardStyles from '../Styles/Card.module.css'
-console.log(CardStyles)
+import CardStyles from "../Styles/Card.module.css";
+import Counter from "./Counter";
 
-const Card = ({item}) => {
-    // console.log(item)
-    const {img, tipo, precio} = item
+const Card = ({ item, setCart }) => {
+  const { img, tipo, precio } = item;
   return (
     <div className={CardStyles.cardContainer}>
-        {/*  Explicando css
-            <h2 className="titulo">Otro ejemplo css</h2> 
-        */} 
-        <img src={img} alt={tipo} className={CardStyles.cardImg}/>
-        <h4>{tipo}</h4>
-        <h4>${precio}</h4>
-        <button>🛒</button>
+      <img src={img} alt={tipo} className={CardStyles.cardImg} />
+      <h4>{tipo}</h4>
+      <h4>${precio}</h4>
+      <Counter />
+      <button onClick={() => setCart((prevState) => [...prevState, item])}>
+        🛒
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

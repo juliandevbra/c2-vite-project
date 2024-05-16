@@ -1,21 +1,32 @@
-.list-container{
+.list-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
 }
 
-button{
-  font-weight:700 ;
+button {
+  font-weight: 700;
   border: none;
   border-radius: 10px;
   min-width: 10px;
   min-height: 30px;
-  background-color: firebrick; 
+  background-color: firebrick;
 }
 
-h3,h4{
+h3,
+h4 {
   margin: 10px;
 }
 
-.titulo{
+.titulo {
   color: green;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+}
+.counter button {
+  color: white;
+  height: 10px;
+  min-width: 30px;
 }

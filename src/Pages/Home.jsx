@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Card from "./Card";
+import Card from "../Components/Card";
 import axios from "axios";
 
 const titleStyle = {
@@ -57,13 +57,13 @@ const Home = () => {
   console.log(recipes);
   return (
     <div>
-      <h2>Pizzas seleccionadas</h2>
+      <h2>Recetas seleccionadas</h2>
       <ul>
         {cart.map((pedido) => (
           <li>{pedido.title}</li>
         ))}
       </ul>
-      <h1 style={titleStyle}>Lista de pizzas</h1>
+      <h1 style={titleStyle}>Lista de recetas</h1>
       <div className="list-container">
         {recipes.map((recipe) => (
           <Card item={recipe} key={recipe.id} setCart={setCart} />

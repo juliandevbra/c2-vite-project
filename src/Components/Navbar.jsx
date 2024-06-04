@@ -1,12 +1,22 @@
+import { Link, useNavigate } from "react-router-dom";
 import "../Styles/Navbar.css";
+import { routes } from "../utils/routes";
 
 const Navbar = () => {
-  const titulos = ["Inicio", "Productos", "Contacto"];
+  const navigate = useNavigate();
+
   return (
     <div className="navbar">
-      {titulos.map((titulo, index) => (
-        <h4 key={index}>{titulo}</h4>
-      ))}
+      <button onClick={() => navigate(-1)}>🔙</button>
+      <Link to={routes.home}>
+        <h4>Home</h4>
+      </Link>
+      <Link to={routes.contact}>
+        <h4>Contacto</h4>
+      </Link>
+      <Link to={routes.cart}>
+        <h4>Cart 🛒</h4>
+      </Link>
     </div>
   );
 };

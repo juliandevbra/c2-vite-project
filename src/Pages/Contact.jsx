@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Contact = () => {
+const Contact = ({ onClick }) => {
+  const [estado, setEstado] = useState("");
   return (
-    <form>
+    <div>
       <h1>Envianos tu consulta</h1>
-      <input type="text" />
-      <input type="text" />
-      <button>Enviar</button>
-    </form>
+      <input type="email" role="email" />
+      <input
+        type="text"
+        data-testid="consulta"
+        value={estado}
+        onChange={(e) => setEstado(e.target.value)}
+      />
+      <button onClick={onClick}>Enviar</button>
+    </div>
   );
 };
 

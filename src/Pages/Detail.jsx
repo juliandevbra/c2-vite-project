@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 
 const Detail = () => {
   const [recipe, setRecipe] = useState();
-  const [htmlContent, setHtmlContent] = useState("");
   const params = useParams();
   console.log(params);
   const apiKey = "68d481a0fbc340308fbf934f836ee8c6";

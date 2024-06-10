@@ -15,9 +15,9 @@ import Context from "./Context/Context";
 function App() {
   return (
     <>
-      <ParentComponent />
-      <LoboEstepario />
-      {/* <Navbar />
+      {/* <ParentComponent />
+      <LoboEstepario /> */}
+      <Navbar />
 
       <Routes>
         <Route path={routes.home} element={<Home />} />
@@ -25,7 +25,7 @@ function App() {
         <Route path={routes.cart} element={<Cart />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="*" element={<h1>Error 404 - Page not found</h1>} />
-      </Routes> */}
+      </Routes>
     </>
   );
 }

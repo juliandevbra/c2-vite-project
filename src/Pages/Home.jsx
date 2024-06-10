@@ -45,20 +45,14 @@ let pizzas = [
 ];
 
 const Home = () => {
-  const { cart, recipes, setCart } = useRecipeStates();
+  const { recipes } = useRecipeStates();
   // console.log(recipes);
   return (
     <div>
-      <h2>Recetas seleccionadas</h2>
-      <ul>
-        {cart.map((pedido) => (
-          <li>{pedido.title}</li>
-        ))}
-      </ul>
       <h1 style={titleStyle}>Lista de recetas</h1>
       <div className="list-container">
         {recipes.map((recipe) => (
-          <Card item={recipe} key={recipe.id} setCart={setCart} />
+          <Card item={recipe} key={recipe.id} />
         ))}
       </div>
     </div>

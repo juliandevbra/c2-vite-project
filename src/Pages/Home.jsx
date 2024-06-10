@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "../Components/Card";
 import axios from "axios";
+import { useRecipeStates } from "../Context/Context";
 
 const titleStyle = {
   backgroundColor: "#ffda92",
@@ -44,17 +45,8 @@ let pizzas = [
 ];
 
 const Home = () => {
-  const [cart, setCart] = useState([]);
-  const [recipes, setRecipes] = useState([]);
-  const apiKey = "68d481a0fbc340308fbf934f836ee8c6";
-  const url =
-    "https://api.spoonacular.com/recipes/random?number=10&apiKey=" + apiKey;
-
-  useEffect(() => {
-    axios(url).then((res) => setRecipes(res.data.recipes));
-  }, []);
-
-  console.log(recipes);
+  const { cart, recipes, setCart } = useRecipeStates();
+  // console.log(recipes);
   return (
     <div>
       <h2>Recetas seleccionadas</h2>

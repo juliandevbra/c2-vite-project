@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import CardStyles from "../Styles/Card.module.css";
 import Counter from "./Counter";
+import Button from "./Button";
 
 const Card = ({ item, setCart }) => {
   const { image, title, pricePerServing } = item;
@@ -12,9 +13,9 @@ const Card = ({ item, setCart }) => {
       </Link>
       <h4>${pricePerServing}</h4>
       <Counter />
-      <button onClick={() => setCart((prevState) => [...prevState, item])}>
+      <Button handleClick={() => setCart((prevState) => [...prevState, item])}>
         🛒
-      </button>
+      </Button>
     </div>
   );
 };

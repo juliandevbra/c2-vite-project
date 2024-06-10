@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "../Components/Button";
 
 const Contact = ({ onClick }) => {
   const [estado, setEstado] = useState("");
@@ -12,7 +13,7 @@ const Contact = ({ onClick }) => {
         value={estado}
         onChange={(e) => setEstado(e.target.value)}
       />
-      <button onClick={onClick}>Enviar</button>
+      <Button onClick={onClick}>Enviar</Button>
     </div>
   );
 };

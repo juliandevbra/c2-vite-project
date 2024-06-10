@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Envio from "./Envio";
+import Button from "./Button";
 
 const Form = () => {
   const [cliente, setCliente] = useState({
@@ -39,7 +40,7 @@ const Form = () => {
           value={cliente.direccion}
           onChange={handleDireccion}
         />
-        <button>Enviar</button>
+        <Button>Enviar</Button>
       </form>
       {/* Operación ternaria: 
         {condicion ? true : false} Reemplazo de if else

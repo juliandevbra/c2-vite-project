@@ -8,11 +8,16 @@ import Cart from "./Pages/Cart";
 import { routes } from "./utils/routes";
 import Counter from "./Components/Counter";
 import Detail from "./Pages/Detail";
+import ParentComponent from "./Clase 13/ParentComponent";
+import LoboEstepario from "./Clase 13/LoboEstepario";
+import Context from "./Context/Context";
 
 function App() {
   return (
     <>
-      <Navbar />
+      <ParentComponent />
+      <LoboEstepario />
+      {/* <Navbar />
 
       <Routes>
         <Route path={routes.home} element={<Home />} />
@@ -20,7 +25,7 @@ function App() {
         <Route path={routes.cart} element={<Cart />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="*" element={<h1>Error 404 - Page not found</h1>} />
-      </Routes>
+      </Routes> */}
     </>
   );
 }

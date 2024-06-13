@@ -13,15 +13,10 @@ const Counter = () => {
       return prev + 1;
     });
   };
-
   return (
     <div className="counter">
-      {/* <button onClick={restar} disabled={counter === 0}>
-        -
-      </button> */}
       <Button handleClick={restar}>-</Button>
       <h4>{counter}</h4>
-      {/* <button onClick={sumar}>+</button> */}
       <Button handleClick={sumar}>+</Button>
     </div>
   );

@@ -6,9 +6,8 @@ import { useRecipeStates } from "../Context/Context";
 
 const Card = ({ item }) => {
   const { image, title, pricePerServing } = item;
-  const { setCart } = useRecipeStates();
+  const { dispatch } = useRecipeStates();
   const location = useLocation();
-  console.log(location);
 
   return (
     <div className={CardStyles.cardContainer}>
@@ -18,11 +17,21 @@ const Card = ({ item }) => {
       </Link>
       <h4>${pricePerServing}</h4>
       <Counter />
-      {location.pathname == "/" && (
+      {location.pathname == "/" ? (
         <Button
-          handleClick={() => setCart((prevState) => [...prevState, item])}
+          // handleClick={() => setCart((prevState) => [...prevState, item])}
+          handleClick={() => dispatch({ type: "ADD_CART", payload: item })}
         >
           🛒
+        </Button>
+      ) : (
+        <Button
+          // handleClick={() => setCart((prevState) => [...prevState, item])}
+          handleClick={() =>
+            dispatch({ type: "DELETE_CART", payload: item.id })
+          }
+        >
+          ❌
         </Button>
       )}
     </div>
